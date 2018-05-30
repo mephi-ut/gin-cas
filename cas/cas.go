@@ -4,7 +4,7 @@ import (
 	goCas "github.com/go-cas/cas"
 )
 
-type casMiddleware {
+type casMiddleware struct {
 	casClient *goCas.Client
 }
 
@@ -17,4 +17,3 @@ func (casMiddleware casMiddleware) casMiddleware(c *gin.Context) {
 func MiddlewareFunc(casClient *goCas.Client) gin.HandlerFunc {
 	return casMiddleware{casClient: casClient}.middlewareFunc
 }
-
